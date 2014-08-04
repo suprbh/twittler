@@ -3,43 +3,24 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
-    <link rel="stylesheet" type="text/css" href="page_design.css">
+    <script src="application.js"></script>
+    <link type="text/css" rel="stylesheet" href="page_design.css">
   </head>
-  <body style="background-color:#00CCFF;">
-    <script>
-    var get_tweets = function(){
-      var $tweetUl = $('.messages');
-      var index = streams.home.length - 1;
-      
-      while(index >= 0){
-        var tweet = streams.home[index];
-        var str_date = tweet.created_at.toLocaleString();
-        var $tweet = $('<div id="tweets"></div>');
-
-        $tweet.css({'background-color': '#EEEEEE','border': '2px solid gray', 'height': '50px', 'width': '700px', 'float': 'left'});
-        $tweet.text('@' + tweet.user + ' , ' + str_date +':');
-        $tweet.appendTo($tweetUl);
-        $tweet.append('<br><span>' + tweet.message);
-        index -= 1;
-      }
-    };
-
-    $(document).ready(function(){
-      get_tweets();
-
-      // on Refresh, remove old tweets and show fresh ones
-      $('button').on('click', function(){
-        $('ul.messages div').remove();
-        get_tweets();
-      });
-    });
-
-    </script>
- 
-    <button class="refresh" style="background-color:#EEEEEE;height: 25px;width:100px;float:right;">Refresh</button>
-    <h2 id="content-main-heading" style="margin_bottom: 0;text-align:center;">Twittler</h2>
-    <ul class="messages">          
-    </ul>
-
+  <body style="background-color:#33CCFF;">
+    <h2 id="content-main-heading" style="margin_bottom: 0;text-align:center;font:sans-serif;">Twittler</h2>
+    <hr>
+    <div id="all" class="box_style">
+      <h3> Latest Tweets </h3>
+      <ul class="messages">     
+      </ul>
+    </div>
+    <div id="user" class="box_style">
+      <h3> Select user for tweets! </h3>
+      <ul class="messages">
+      </ul>
+    </div>
+    <div>
+      <button id="refresh" class="plain_gray">Refresh</button>
+    </div>  
   </body>
 </html>

@@ -1,0 +1,19 @@
+.plain_gray {
+  background-color:#EEEEEE;
+  height: 25px;
+  width:100px;
+  float:right;
+  color: green;
+}
+.box_style {
+  background-color:lightcyan;
+  border:2px solid gray;
+  width:500px;
+  float:left;
+}
+.tweet_style {
+  border:2px solid gray;
+  height:50px;
+  width:400px;
+  float:left;
+}
